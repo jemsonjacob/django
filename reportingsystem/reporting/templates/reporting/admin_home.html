@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{%extends 'reporting/base.html'%}
+{%block body_block%}
+<div class="row mt-5">
+        <div class="col-3 ">
+            <h2>  <a href="{%url 'userhome'%}" class="btn btn-lg btn-outline-danger border rounded">Timesheet Manage</a></h2>
+        </div>
+        <div class="col-3">
+          <h2> <a href="{%url 'users'%}" class="btn btn-lg btn-outline-danger border rounded">User Manage</a></h2>
+        </div>
+        <div class="col-3">
+            <h2> <a href="{%url 'courses'%}" class="btn btn-lg btn-outline-danger border rounded">Course Manage</a></h2>
+        </div>
+        <div class="col-3">
+          <h2>  <a href="{%url 'batches'%}" class="btn btn-lg btn-outline-danger border rounded">Batch Manage</a></h2>
+        </div>
+
+</div>
+{%endblock%}

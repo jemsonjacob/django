@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{%extends 'employer/index.html' %}
+{%block body_block%}
+<div class="container">
+    <div class="row m-4">
+        <div class="col-4"></div>
+        <div class="col-4">
+
+
+        {%for company in companies%}
+        <div class="card m-2" style="width: 18rem;">
+
+            <img src="{{company.logo.url}}" class="card-img-top " style="height:250px;" alt="" height="300" width="300">
+
+            <div class="card-body">
+
+                <h5 class="card-title">{{company.company_name}}</h5>
+                <p class="card-text">{{company.description}}</p>
+                <a href="{%url 'editcomprofile' company.id %}" class="btn btn-primary">Update</a>
+
+                <a href="{%url 'deletecprofile' company.id %}" class="btn btn-primary">Delete
+                </a>
+
+
+
+
+            </div>
+        </div>
+
+        </div>
+        <div class="col-4"></div>
+
+
+        {%endfor%}
+
+
+    </div>
+</div>
+{%endblock%}

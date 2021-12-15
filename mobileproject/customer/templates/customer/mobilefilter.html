@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{%extends 'customer/base.html' %}
+{%block body_block%}
+<h1>Welcome {{request.user}}</h1>
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <form action="" method="GET">
+            {{filter.form.as_p}}
+            <button type="Submit">Search</button>
+        </form>
+    </div>
+    <div class="col-4"></div>
+</div>
+
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        {%if messages%}
+        {%for message in messages%}
+        {{message}}
+        {%endfor%}
+        {%endif%}
+    </div>
+    <div class="col-4"></div>
+</div>
+<div class="row">
+    {%for mobile in filter.qs%}
+    <div class="col-4 m-5">
+        <div class="card m-5" style="width: 18rem;">
+            <img src="{{book.image.url}}" class="card-img-top " style="height:250px;" alt="...">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Mobilename:{{mobile.mobile_name}}</li>
+                <li class="list-group-item">Company:{{mobile.company}}</li>
+                <li class="list-group-item">Price:{{mobile.price}}</li>
+                <li class="list-group-item">Stocks:{{mobile.stocks}}</li>
+                <li class="list-group-item">
+                    <a href="{%url 'ordercreate' book.id%}" class="btn btn-primary">Order</a></li>
+            </ul>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+
+
+{%endblock%}
+

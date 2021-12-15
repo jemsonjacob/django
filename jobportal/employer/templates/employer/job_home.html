@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{%extends 'employer/index.html' %}
+{%block body_block%}
+<div class="container">
+    <div class="row">
+        <div class="col-4 mt-5">
+            <div class="d-grid gap-2 col-6 mx-auto">
+             <a href="{%url 'addjob'%}" class="btn btn-lg btn-outline-danger border rounded">Add Job</a>
+        </div>
+            </div>
+        <div class="col-4 mt-5 ">
+            <div class="d-grid gap-2 col-6 mx-auto">
+             <a href="{%url 'listjob' %}" class="btn btn-lg btn-outline-danger border rounded">View Job</a>
+        </div>
+        </div>
+        <div class="col-4 mt-5">
+           <div class="d-grid gap-2 col-6 mx-auto">
+             <a href="{%url 'application' %}" class="btn btn-lg btn-outline-danger border rounded">View Applicants</a>
+        </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

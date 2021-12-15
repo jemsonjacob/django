@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{%extends 'reporting/base.html' %}
+{%block body_block%}
+
+<div class="container">
+<div class="row">
+        <div class="col-4">
+            <form action="" method="get">
+                {{filter.form}}
+                <div class="mb-3">
+                    <h6>Date</h6>
+                    <input type="date" name="date" id="date">
+                </div>
+                <button type="submit" class="btn btn-success">search</button>
+            </form>
+        </div>
+
+
+        <div class="col-4"><h1 class="text-center">TimeSheets Available</h1></div>
+       </div>
+    </div>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <table class="table">
+                <tr class="border">
+                    <td class="border">Batch Name</td>
+                    <td class="border">Topic</td>
+                    <td class="border">Topic_status</td>
+                    <td class="border">User</td>
+                    <td class="border">Verified</td>
+                    <td class="border">Date</td>
+                    <td class="border">Action</td>
+                </tr>
+                {%for timesheet in timesheets%}
+                <tr>
+                    <td class="border">{{timesheet.batch}}</td>
+                    <td class="border">{{timesheet.topic}}</td>
+                    <td class="border">{{timesheet.topic_status}}</td>
+                    <td class="border">{{timesheet.user}}</td>
+                    <td class="border">{{timesheet.verified}}</td>
+                    <td class="border">{{timesheet.date}}</td>
+
+                    {%if request.user.is_admin%}
+                    <td>
+                        {%if not timesheet.verified%}
+                        <a href="{%url 'changestatus' timesheet.id %}" class="btn btn-primary">Verify</a>
+                        {%endif%}
+                    </td>
+
+                    <td class="border">
+                        <a href="{%url 'edittimesheet' timesheet.id%}" class="btn btn-success">Edit</a>
+                        <a href="{%url 'deletetimesheet' timesheet.id%}" class="btn btn-warning">Delete</a>
+                    </td>
+                    {%endif%}
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+    </div>
+
+{%endblock%}

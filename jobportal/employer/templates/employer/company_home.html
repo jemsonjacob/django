@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{%extends 'employer/index.html' %}
+{%block body_block%}
+<div class="container">
+    <div class="row">
+        <div class="col-4 mt-5">
+            <div class="d-grid gap-2 col-6 mx-auto">
+             <a href="{%url 'cprofilehome' %}" class="btn btn-lg btn-outline-danger border rounded">Profile Management</a>
+        </div>
+            </div>
+        <div class="col-4 "></div>
+        <div class="col-4 mt-5 ">
+            <div class="d-grid gap-2 col-6 mx-auto">
+             <a href="jobhome" class="btn btn-lg btn-outline-danger border rounded">Job Management</a>
+        </div>
+        </div>
+
+    </div>
+</div>
+
+    <div class="col-4"></div>
+    <div class="col-4 "></div>
+    <div class="col-4"></div>
+
+{%endblock%}

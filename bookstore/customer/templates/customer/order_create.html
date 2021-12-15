@@ -1,0 +1,23 @@
+{%extends 'customer/base.html'%}
+{%block body_block%}
+<div class="row">
+     <div class="col-4">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h6 class="card-title">bookname:{{book.book_name}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">author:{{book.author}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">price:{{book.price}}</h6>
+            </div>
+        </div>
+     </div>
+    <div class="col-4">
+        <form action="" method="POST" >
+            {%csrf_token%}
+            {{form.as_p}}
+            <button type="submit" >order</button>
+        </form>
+
+    </div>
+    <div class="col-4"></div>
+</div>
+{%endblock%}

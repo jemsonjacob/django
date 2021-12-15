@@ -1,0 +1,23 @@
+{%extends 'customer/base.html' %}
+{%block body_block%}
+<div class="row">
+     <div class="col-4">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h6 class="card-title">Mobilename:{{mobile.mobile_name}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Company:{{mobile.company}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Price:{{mobile.price}}</h6>
+            </div>
+        </div>
+     </div>
+    <div class="col-4">
+        <form action="" method="POST" >
+            {%csrf_token%}
+            {{form.as_p}}
+            <button type="submit" >Order</button>
+        </form>
+
+    </div>
+    <div class="col-4"></div>
+</div>
+{%endblock%}

@@ -1,0 +1,23 @@
+{%extends 'patient/base.html'%}
+{%block body_block%}
+<div class="row">
+     <div class="col-4">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h6 class="card-title">Doctorname:{{doctor.doctor_name}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Department:{{doctor.department}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Fee:{{doctor.fee}}</h6>
+            </div>
+        </div>
+     </div>
+    <div class="col-4">
+        <form action="" method="POST" >
+            {%csrf_token%}
+            {{form.as_p}}
+            <button type="submit" >Submit</button>
+        </form>
+
+    </div>
+    <div class="col-4"></div>
+</div>
+{%endblock%}

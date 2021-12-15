@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{%extends 'reporting/base.html' %}
+{%block body_block%}
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8"></div>
+        <div class="col-2">
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <table class="table">
+
+                <tr>
+                    <td class="border">User Name</td>
+                    <td class="border">Role</td>
+                    <td class="border">Actions</td>
+                     <td class="border"><a href="{%url 'adduser'%}"class="btn btn-outline-primary">Add</a></td>
+                </tr>
+                {%for user in users%}
+                <tr>
+                    <td class="border">{{user.email}}</td>
+                    <td class="border">{{user.role}}</td>
+                    <td class="border"><a href="{%url 'edituser' user.id%}" class="btn btn-primary">Edit</a> </td>
+
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+        <div class="col-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+        <div class="col-4">  </div>
+    </div>
+</div>
+{%endblock%}

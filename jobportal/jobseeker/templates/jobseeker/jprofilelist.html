@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{%extends 'jobseeker/base.html' %}
+{%block body_block%}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-4"></div>
+        <div class="col-4">
+
+        {%for profile in profiles%}
+        <div class="card m-2" style="width: 18rem;">
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    <img src="{{profile.profile_pic.url}}" class="card-img-top" alt="" height="300" width="300">
+                </h5>
+                <p class="card-text">Name:{{profile.name}}</p>
+                <p class="card-text">Skill:{{profile.skill}}</p>
+                <p class="card-text">Resume:{{profile.resume}}</p>
+                <a href="{% url 'jprofileedit' profile.id %}" class="btn btn-primary">Update</a>
+            </div>
+        </div>
+        {%endfor%}
+
+
+        </div>
+        <div class="col-4"></div>
+
+
+    </div>
+</div>
+{%endblock%}
+
+
+

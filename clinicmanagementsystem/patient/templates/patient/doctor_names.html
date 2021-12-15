@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="row">
+    {%for doctor in doctors%}
+    <div class="col-4 m-2">
+        <div class="card m-2" style="width: 18rem;">
+            <img src="{{doctor.image.url}}" class="card-img-top " style="height:250px;" alt="...">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Doctor:{{doctor.doctor_name}}</li>
+
+                <li class="list-group-item">Time:{{doctor.time}}</li>
+                <li class="list-group-item">Department:{{doctor.department}}</li>
+                    <li class="list-group-item ">
+                        <a href="{%url 'appointmentcreate' doctor.id%}" class="btn btn-primary">Submit</a></li>
+            </ul>
+        </div>
+    </div>
+    {%endfor%}
+
+
+
+
+
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+
+</body>
+</html>

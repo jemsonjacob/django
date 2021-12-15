@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{%extends 'jobseeker/base.html' %}
+{%block body_block%}
+<div class="container">
+     <div class="row mt-2">
+         <div class="col-4"></div>
+         <div class="col-4"></div>
+         <div class="col-4">
+             <form action="" method="get" >
+                {{filter.form}}
+                    <input type="text" name="job_name" id="job_name">
+                <button type="submit" class="btn btn-success">Search</button>
+            </form>
+             </div>
+
+
+    <div class="row mt-5">
+
+        {%for job in jobs%}
+        <div class="card m-2" style="width: 18rem;">
+
+            <div class="card-body">
+
+                <h5 class="card-title">Company:{{job.company}}</h5>
+                <p class="card-text">Job:{{job.job_name}}</p>
+                <p class="card-text">Experience:{{job.experience}}</p>
+                <p class="card-text">Details:{{job.job_details}}</p>
+                <a href="{%url 'japply' job.id %}" class="btn btn-danger">Apply For The Job</a>
+
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+    </div>
+</div>
+{%endblock%}

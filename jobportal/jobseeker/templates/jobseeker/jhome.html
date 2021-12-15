@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{%extends 'jobseeker/base.html' %}
+{%block body_block%}
+<div class="container">
+    <div class="row">
+        <div class="col-4 mt-5">
+            <div class="d-grid gap-2 col-6 mx-auto">
+             <a href="{%url 'jprofileadd'%}" class="btn btn-lg btn-outline-danger border rounded">Add Profle</a>
+        </div>
+            </div>
+        <div class="col-4 mt-5 ">
+            <div class="d-grid gap-2 col-6 mx-auto">
+             <a href="{%url 'jprofilelist'%}" class="btn btn-lg btn-outline-danger border rounded">View Profile</a>
+        </div>
+        </div>
+        <div class="col-4 mt-5">
+                  <div class="d-grid gap-2 col-6 mx-auto">
+             <a href="{%url 'jlist'%}" class="btn btn-lg btn-outline-danger border rounded">View Jobs</a>
+        </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

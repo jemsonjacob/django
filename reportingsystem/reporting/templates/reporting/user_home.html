@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{%extends 'reporting/base.html' %}
+{%block body_block%}
+<div class="container">
+    <div class="row ">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <h4>Welcome-{{request.user}}</h4>
+
+        </div>
+
+        <div class="col-4 "></div>
+    </div>
+
+
+    <div class="container">
+
+        <div class="row ">
+            <div class="col-lg-4 mt-5">
+
+                <div class="icon-box">
+                    <h2><a href="{%url 'addtimesheet'%}" style="text-decoration:none">Add Timesheet</a>
+                    </h2>
+                </div>
+            </div>
+            <div class="col-lg-4 mt-5">
+                <div class="icon-box">
+                    <h2><a href="{%url 'listtimesheet'%}" style="text-decoration:none">View Timesheet</a></h2>
+                </div>
+            </div>
+            <div class="col-4">
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+{%endblock%}
+
